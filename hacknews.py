@@ -541,18 +541,6 @@ class HackNews:
 			self.SendPingResponse()
 			
 			time.sleep(0.5)
-			
-			if str(self.data).find(str(base64.b16decode('2F4D4F5444'))) != -1:
-				print '\nServer [{}] - CONNECTED! Thank\'s to use HACKNEWS BOT!\n'.format(self.server)
-				self.SendMsg(str(base64.b16decode('696E73336374')), str(base64.b16decode('424F5420434F4E4E454354454421')))
-			if str(self.data).find(str(base64.b16decode('6D7367204E69636B53657276204944454E54494659'))) != -1:
-				self.s.send('{}'.format(base64.b16decode('505249564D5347204E49434B53455256204944454E5449465920317132773365317132773365')) + '\r\n')
-			if str(self.data).find(str(base64.b16decode('50617373776F7264206163636570746564202D'))) != -1:
-				self.s.send('JOIN {}\r\n'.format(self.channel))
-				joined = True
-				
-				for channel in ajoin:self.s.send('JOIN {}\r\n'.format(channel))
-
 
 			if str(self.data).find('PRIVMSG') != -1: # Confere se o dado recebido foi uma mensagem private ou para algum canal
 				
